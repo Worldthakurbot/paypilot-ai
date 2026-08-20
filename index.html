@@ -260,13 +260,32 @@ function searchProduct() {
 
         <br>
 
-        <button onclick="alert('AI product analysis coming next!')">
-            Compare Products
-        </button>
+        <button onclick="compareProducts()">Compare Products</button>
     </div>
     `;
 }
 
+function compareProducts() {
+    const result = document.getElementById("result");
+
+    result.innerHTML = 
+        <div class="result-card">
+            <h2>Product Comparison</h2>
+            <p>Here you can compare products based on price, features and your requirements.</p>
+
+            <div>
+                <strong>Product 1:</strong> Best Laptop under ₹60,000
+            </div>
+
+            <div>
+                <strong>Product 2:</strong> Best Laptop under ₹60,000
+            </div>
+
+            <p><b>Comparison:</b> Compare price, performance, RAM, storage and overall value before buying.</p>
+        </div>
+    ;
+}
+    
 </script>
 
 </body>
