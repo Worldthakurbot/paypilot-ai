@@ -232,12 +232,12 @@ function searchProduct() {
     const result = document.getElementById("result");
 
     if (query === "") {
-        result.innerHTML = 
+        result.innerHTML = `
             <div class="result-card">
                 <h2>Please enter your requirement</h2>
                 <p>Example: Best smartphone under ₹30000</p>
             </div>
-        ;
+        `;
         return;
     }
 
