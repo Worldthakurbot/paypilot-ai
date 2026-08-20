@@ -224,7 +224,10 @@
 
 function searchProduct() {
 
-    const query = document.getElementById("searchBox").value.trim();
+    const query = document
+        .getElementById("searchBox")
+        .value
+        .trim();
 
     const result = document.getElementById("result");
 
@@ -257,98 +260,13 @@ function searchProduct() {
 
         <br>
 
-        <button onclick="compareProducts()">Compare Products</button>
+        <button onclick="alert('AI product analysis coming next!')">
+            Compare Products
+        </button>
     </div>
     `;
 }
 
-function compareProducts() {
-    const query = document.getElementById("searchBox").value.trim();
-    const result = document.getElementById("result");
-
-    if (query === "") {
-        result.innerHTML = "<p>Please enter a product requirement.</p>";
-        return;
-    }
-
-    let product1 = "";
-    let product2 = "";
-    let comparison = "";
-
-    const q = query.toLowerCase();
-
-    if (q.includes("laptop")) {
-        product1 = "HP Laptop";
-        product2 = "Lenovo Laptop";
-        comparison = "Compare price, processor, RAM, storage and overall performance.";
-    } 
-    else if (q.includes("phone") || q.includes("mobile")) {
-        product1 = "Samsung Galaxy";
-        product2 = "OnePlus";
-        comparison = "Compare price, camera, RAM, storage, battery and performance.";
-    } 
-    else if (q.includes("headphone")  q.includes("earphone")  q.includes("earbuds")) {
-        product1 = "Sony Headphones";
-        product2 = "boAt Earbuds";
-        comparison = "Compare price, sound quality, battery, comfort and features.";
-    } 
-    else if (q.includes("watch")) {
-        product1 = "Samsung Galaxy Watch";
-        product2 = "Noise Smartwatch";
-        comparison = "Compare price, display, battery, health features and overall value.";
-    } 
-    else {
-        product1 = "Best option for " + query;
-        product2 = "Alternative option for " + query;
-        comparison = "Compare price, features, performance and overall value.";
-    }
-
-    result.innerHTML = `
-        <div class="result-card">
-            <h2>🛒 Product Comparison</h2>
-
-            <p>Here are two options based on your requirement:</p>
-
-            <div>
-                <strong>Product 1:</strong> ${product1}
-            </div>
-
-            <div>
-                <strong>Product 2:</strong> ${product2}
-            </div>
-
-            <p>
-                <b>Comparison:</b> ${comparison}
-            </p>
-
-            <p>
-                <b>Recommendation:</b> Choose the product that best matches your
-                budget, features and requirements.
-            </p>
-        </div>
-    `;
-}
-
-function searchProduct() {
-    const query = document.getElementById("searchBox").value.trim();
-    const result = document.getElementById("result");
-
-    if (query === "") {
-        result.innerHTML = "<p>Please enter something.</p>";
-        return;
-    }
-
-    result.innerHTML =
-        "<div class='result-card'>" +
-        "<h2>🤖 AI Recommendation</h2>" +
-        "<p>You are looking for: <strong>" + query + "</strong></p>" +
-        "<p>PayPilot AI understood your requirement successfully.</p>" +
-        "<br>" +
-        "<button onclick='compareProducts()'>Compare Products</button>" +
-        "</div>";
-}
-      
-    
 </script>
 
 </body>
