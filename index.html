@@ -224,11 +224,7 @@
 
 function searchProduct() {
 
-    const query = document
-        .getElementById("searchBox")
-        .value
-        .trim();
-
+    const query = document.getElementById("searchBox").value.trim();
     const result = document.getElementById("result");
 
     if (query === "") {
@@ -242,31 +238,86 @@ function searchProduct() {
     }
 
     result.innerHTML = `
-    <div class="result-card">
-        <h2>🤖 AI Recommendation</h2>
+        <div class="result-card">
+            <h2>🤖 AI Recommendation</h2>
 
-        <p>
-            I understood that you are looking for:
-            <strong>${query}</strong>
-        </p>
+            <p>
+                I understood that you are looking for:
+                <strong>${query}</strong>
+            </p>
 
-        <br>
+            <br>
 
-        <p>
-            PayPilot AI will analyze your requirement,
-            compare available options and recommend the
-            most suitable product.
-        </p>
+            <p>
+                PayPilot AI will analyze your requirement,
+                compare available options and recommend the
+                most suitable product.
+            </p>
 
-        <br>
+            <br>
 
-        <button onclick="alert('AI product analysis coming next!')">
-            Compare Products
-        </button>
-    </div>
+            <button onclick="compareProducts()">
+                Compare Products
+            </button>
+        </div>
     `;
 }
 
+
+function compareProducts() {
+
+    const query = document.getElementById("searchBox").value.trim();
+    const result = document.getElementById("result");
+
+    let product1 = "Option 1";
+    let product2 = "Option 2";
+    let details = "Compare price, features, performance and overall value.";
+
+    const q = query.toLowerCase();
+
+    if (q.includes("laptop")) {
+        product1 = "HP Laptop";
+        product2 = "Lenovo Laptop";
+        details = "Compare processor, RAM, storage, battery and performance.";
+    }
+    else if (q.includes("phone") || q.includes("mobile")) {
+        product1 = "Samsung Galaxy";
+        product2 = "OnePlus";
+        details = "Compare camera, RAM, storage, battery and performance.";
+    }
+    else if (q.includes("headphone") || q.includes("earbuds")) {
+        product1 = "Sony Headphones";
+        product2 = "boAt Earbuds";
+        details = "Compare sound quality, battery and features.";
+    }
+
+    result.innerHTML = `
+        <div class="result-card">
+            <h2>⚖️ Product Comparison</h2>
+
+            <p><strong>Your requirement:</strong> ${query}</p>
+
+            <br>
+
+            <p><strong>Product 1:</strong> ${product1}</p>
+
+            <p><strong>Product 2:</strong> ${product2}</p>
+
+            <br>
+
+            <p><strong>Comparison:</strong> ${details}</p>
+
+            <br>
+
+            <p>
+                <strong>AI Recommendation:</strong>
+                Choose the option that best matches your budget
+                and requirements.
+            </p>
+        </div>
+    `;
+}
+    
 </script>
 
 </body>
