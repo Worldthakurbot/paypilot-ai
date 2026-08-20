@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPilot AI</title>
+</head>
+<body>
 
+    <h1>PayPilot AI</h1>
+
+    <p>AI-powered Agentic Commerce Assistant</p>
+
+    <input type="text" id="searchBox" placeholder="What are you looking for?">
+
+    <button onclick="searchProduct()">Search</button>
+
+    <div id="result"></div>
+
+    <script>
+        function searchProduct() {
+            const query = document.getElementById("searchBox").value;
+            const result = document.getElementById("result");
+
+            if (query.trim() === "") {
+                result.innerHTML = "<p>Please enter a product or requirement.</p>";
+                return;
+            }
+
+            result.innerHTML = 
+                <h3>AI Recommendation</h3>
+                <p>You are looking for: <b>${query}</b></p>
+                <p>PayPilot AI will help you find and compare the best options.</p>
+            ;
+        }
+    </script>
+
+</body>
+</html>
