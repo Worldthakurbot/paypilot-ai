@@ -241,30 +241,30 @@ function searchProduct() {
         return;
     }
 
-    result.innerHTML = 
-        <div class="result-card">
-            <h2>🤖 AI Recommendation</h2>
+    result.innerHTML = `
+    <div class="result-card">
+        <h2>🤖 AI Recommendation</h2>
 
-            <p>
-                I understood that you are looking for:
-                <strong>${query}</strong>
-            </p>
+        <p>
+            I understood that you are looking for:
+            <strong>${query}</strong>
+        </p>
 
-            <br>
+        <br>
 
-            <p>
-                PayPilot AI will analyze your requirement,
-                compare available options and recommend the
-                most suitable product.
-            </p>
+        <p>
+            PayPilot AI will analyze your requirement,
+            compare available options and recommend the
+            most suitable product.
+        </p>
 
-            <br>
+        <br>
 
-            <button onclick="alert('AI product analysis coming next!')">
-                Compare Products
-            </button>
-        </div>
-    ;
+        <button onclick="alert('AI product analysis coming next!')">
+            Compare Products
+        </button>
+    </div>
+`;
 }
 
 </script>
