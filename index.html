@@ -285,6 +285,24 @@ function compareProducts() {
         </div>
     `;
 }
+
+function searchProduct() {
+    const query = document.getElementById("searchBox").value;
+    const result = document.getElementById("result");
+
+    if (query.trim() === "") {
+        result.innerHTML = "<p>Please enter a product requirement.</p>";
+        return;
+    }
+
+    result.innerHTML = `
+        <div class="result-card">
+            <h2>🤖 AI Recommendation</h2>
+            <p>I understood that you are looking for: <b>${query}</b></p>
+            <p>PayPilot AI will analyze your requirement, compare available options and recommend the most suitable product.</p>
+        </div>
+    `;
+}
     
 </script>
 
