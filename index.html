@@ -334,38 +334,20 @@ function searchProduct() {
     const result = document.getElementById("result");
 
     if (query === "") {
-        result.innerHTML = `
-            <div class="result-card">
-                <h2>Please enter your requirement</h2>
-                <p>Example: Best laptop under 60000</p>
-            </div>
-        `;
+        result.innerHTML = "<p>Please enter something.</p>";
         return;
     }
 
-    result.innerHTML = `
-        <div class="result-card">
-            <h2>🤖 AI Recommendation</h2>
-
-            <p>
-                I understood that you are looking for:
-                <strong>${query}</strong>
-            </p>
-
-            <p>
-                PayPilot AI will analyze your requirement,
-                compare suitable options and help you make
-                a better purchasing decision.
-            </p>
-
-            <br>
-
-            <button onclick="compareProducts()">
-                Compare Products
-            </button>
-        </div>
-    `;
+    result.innerHTML =
+        "<div class='result-card'>" +
+        "<h2>🤖 AI Recommendation</h2>" +
+        "<p>You are looking for: <strong>" + query + "</strong></p>" +
+        "<p>PayPilot AI understood your requirement successfully.</p>" +
+        "<br>" +
+        "<button onclick='compareProducts()'>Compare Products</button>" +
+        "</div>";
 }
+      
     
 </script>
 
