@@ -3,37 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayPilot AI</title>
+    <title>PayPilot AI - Agentic Commerce</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f7ff;
+            color: #171717;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: #eef2ff;
+            color: #4f46e5;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: 35px auto;
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            border: none;
+            background: #4f46e5;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        #result {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .result-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .result-card h2 {
+            margin-bottom: 12px;
+            color: #4f46e5;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 8%;
+        }
+
+        .feature {
+            background: white;
+            width: 220px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .search-box {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>PayPilot AI</h1>
+<nav>
+    <div class="logo">💳 PayPilot AI</div>
+    <div class="badge">AI Agentic Commerce</div>
+</nav>
 
-    <p>AI-powered Agentic Commerce Assistant</p>
+<section class="hero">
 
-    <input type="text" id="searchBox" placeholder="What are you looking for?">
+    <h1>Shop Smarter with <span>AI</span></h1>
 
-    <button onclick="searchProduct()">Search</button>
+    <p>
+        Your intelligent commerce assistant that helps you
+        discover products, compare options and make better
+        purchasing decisions.
+    </p>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Try: Best laptop under ₹60000"
+        >
+
+        <button onclick="searchProduct()">Ask AI</button>
+    </div>
 
     <div id="result"></div>
 
-    <script>
-        function searchProduct() {
-            const query = document.getElementById("searchBox").value;
-            const result = document.getElementById("result");
+</section>
 
-            if (query.trim() === "") {
-                result.innerHTML = "<p>Please enter a product or requirement.</p>";
-                return;
-            }
+<section class="features">
 
-            result.innerHTML = 
-                <h3>AI Recommendation</h3>
-                <p>You are looking for: <b>${query}</b></p>
-                <p>PayPilot AI will help you find and compare the best options.</p>
-            ;
-        }
-    </script>
+    <div class="feature">
+        <h3>🤖 AI Assistant</h3>
+        <p>Understand your shopping requirements using AI.</p>
+    </div>
+
+    <div class="feature">
+        <h3>🔍 Smart Search</h3>
+        <p>Find products based on your needs and budget.</p>
+    </div>
+
+    <div class="feature">
+        <h3>⚖️ Compare</h3>
+        <p>Compare products and choose the best option.</p>
+    </div>
+
+    <div class="feature">
+        <h3>🛒 Commerce</h3>
+        <p>Make faster and smarter purchase decisions.</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 PayPilot AI • AI Growth & Agentic Commerce
+</footer>
+
+<script>
+
+function searchProduct() {
+
+    const query = document
+        .getElementById("searchBox")
+        .value
+        .trim();
+
+    const result = document.getElementById("result");
+
+    if (query === "") {
+        result.innerHTML = 
+            <div class="result-card">
+                <h2>Please enter your requirement</h2>
+                <p>Example: Best smartphone under ₹30000</p>
+            </div>
+        ;
+        return;
+    }
+
+    result.innerHTML = 
+        <div class="result-card">
+            <h2>🤖 AI Recommendation</h2>
+
+            <p>
+                I understood that you are looking for:
+                <strong>${query}</strong>
+            </p>
+
+            <br>
+
+            <p>
+                PayPilot AI will analyze your requirement,
+                compare available options and recommend the
+                most suitable product.
+            </p>
+
+            <br>
+
+            <button onclick="alert('AI product analysis coming next!')">
+                Compare Products
+            </button>
+        </div>
+    ;
+}
+
+</script>
 
 </body>
 </html>
